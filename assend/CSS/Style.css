@@ -63,7 +63,7 @@ main{
 .dark-mode {
     --color-bg: #000;
     --color-text: #fff;
-    --color-primary: #949191;
+    --color-primary: #251d3a;
     --color-secundary: #333;
 }
 
@@ -221,11 +221,61 @@ main{
   input[type="checkbox"]:checked + .switch::after {
     transform: translateX(30px);
   }
+  
+  .custom-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio más reducido */
+}
+
+.custom-flag {
+    width: 30px;
+    height: 30px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-switch .custom-slider {
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.custom-offscreen {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#custom-toggle-language:checked + .custom-switch .custom-slider {
+    transform: translateX(24px);
+}
+
+#custom-toggle-language:checked + .custom-switch {
+    background-color: #4A00E0;
+}
+
 
   .nav__link:hover {
     color: var(--color-primary)
   }
-
 
   .btn--close{
     display: none;

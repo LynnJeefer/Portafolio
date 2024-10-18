@@ -39,3 +39,17 @@ var typed = new Typed('#typing', {
 	loop: true,
 	cursorChar: '_',
 });
+document.addEventListener('DOMContentLoaded', () => {
+	const langToggle = document.getElementById('custom-toggle-language');
+	const currentLang = window.location.pathname.includes('index-en.html');
+
+	langToggle.checked = currentLang;
+
+	langToggle.addEventListener('change', () => {
+		if (langToggle.checked) {
+			window.location.href = 'index-en.html';
+		} else {
+			window.location.href = 'index.html';
+		}
+	});
+});
